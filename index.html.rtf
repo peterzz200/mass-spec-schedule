@@ -1,0 +1,662 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 AppleColorEmoji;}
+{\colortbl;\red255\green255\blue255;\red109\green109\blue109;\red236\green241\blue247;\red251\green0\blue7;
+\red0\green0\blue0;\red42\green42\blue42;\red107\green0\blue1;\red0\green0\blue255;\red24\green112\blue43;
+\red9\green60\blue148;\red19\green118\blue70;\red111\green14\blue195;\red77\green80\blue85;\red164\green69\blue11;
+\red14\green110\blue109;\red191\green28\blue37;}
+{\*\expandedcolortbl;;\cssrgb\c50196\c50196\c50196;\cssrgb\c94118\c95686\c97647;\cssrgb\c100000\c0\c0;
+\cssrgb\c0\c0\c0;\cssrgb\c21961\c21961\c21961;\cssrgb\c50196\c0\c0;\cssrgb\c0\c0\c100000;\cssrgb\c9412\c50196\c21961;
+\cssrgb\c1569\c31765\c64706;\cssrgb\c3529\c52549\c34510;\cssrgb\c51765\c18824\c80784;\cssrgb\c37255\c38824\c40784;\cssrgb\c70980\c34902\c3137;
+\cssrgb\c0\c50196\c50196;\cssrgb\c80392\c19216\c19216;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+<!DOCTYPE\cf4  html\cf2 >\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 <\cf7 html\cf0  \cf4 lang\cf6 =\cf8 "en"\cf6 >\cf0 \cb1 \
+\cf6 \cb3 <\cf7 head\cf6 >\cf0 \cb1 \
+\cb3     \cf6 <\cf7 meta\cf0  \cf4 charset\cf6 =\cf8 "UTF-8"\cf6 >\cf0 \cb1 \
+\cb3     \cf6 <\cf7 meta\cf0  \cf4 name\cf6 =\cf8 "viewport"\cf0  \cf4 content\cf6 =\cf8 "width=device-width, initial-scale=1.0"\cf6 >\cf0 \cb1 \
+\cb3     \cf6 <\cf7 title\cf6 >\cf0 Mass Spec Scheduling System\cf6 </\cf7 title\cf6 >\cf0 \cb1 \
+\cb3     \cf6 <\cf7 script\cf0  \cf4 src\cf6 =\cf8 "https://cdn.tailwindcss.com"\cf6 ></\cf7 script\cf6 >\cf0 \cb1 \
+\cb3     \cf6 <\cf7 link\cf0  \cf4 href\cf6 =\cf8 "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"\cf0  \cf4 rel\cf6 =\cf8 "stylesheet"\cf6 >\cf0 \cb1 \
+\cb3     \cf6 <\cf7 script\cf0  \cf4 src\cf6 =\cf8 "https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"\cf6 ></\cf7 script\cf6 >\cf0 \cb1 \
+\cb3     \cf6 <\cf7 script\cf0  \cf4 src\cf6 =\cf8 "https://cdn.jsdelivr.net/npm/flatpickr"\cf6 ></\cf7 script\cf6 >\cf0 \cb1 \
+\cb3     \cf6 <\cf7 link\cf0  \cf4 rel\cf6 =\cf8 "stylesheet"\cf0  \cf4 href\cf6 =\cf8 "https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"\cf6 >\cf0 \cb1 \
+\cb3     \cf6 <\cf7 style\cf6 >\cf0 \cb1 \
+\cb3         \cf7 body\cf0  \{\cb1 \
+\cb3             \cf4 font-family:\cf0  \cf9 'Inter'\cf0 , \cf10 sans-serif\cf0 ;\cb1 \
+\cb3             \cf4 background-color:\cf0  \cf10 #f8fafc\cf0 ;\cb1 \
+\cb3         \}\cb1 \
+\cb3         \cf7 .fc\cf0  \cf7 .fc-toolbar-title\cf0  \{\cb1 \
+\cb3             \cf4 font-size:\cf0  \cf11 1.25rem\cf0 ;\cb1 \
+\cb3             \cf4 font-weight:\cf0  \cf11 600\cf0 ;\cb1 \
+\cb3         \}\cb1 \
+\cb3         \cf7 .fc\cf0  \cf7 .fc-button\cf0  \{\cb1 \
+\cb3             \cf4 background-color:\cf0  \cf10 #4f46e5\cf0 ;\cb1 \
+\cb3             \cf4 border-color:\cf0  \cf10 #4f46e5\cf0 ;\cb1 \
+\cb3             \cf4 color:\cf0  \cf10 white\cf0 ;\cb1 \
+\cb3         \}\cb1 \
+\cb3         \cf7 .fc\cf0  \cf7 .fc-button:hover\cf0  \{\cb1 \
+\cb3             \cf4 background-color:\cf0  \cf10 #4338ca\cf0 ;\cb1 \
+\cb3             \cf4 border-color:\cf0  \cf10 #4338ca\cf0 ;\cb1 \
+\cb3         \}\cb1 \
+\cb3         \cf7 .fc\cf0  \cf7 .fc-daygrid-day.fc-day-today\cf0  \{\cb1 \
+\cb3             \cf4 background-color:\cf0  \cf10 #e0e7ff\cf0 ;\cb1 \
+\cb3         \}\cb1 \
+\cb3         \cf7 .modal\cf0  \{\cb1 \
+\cb3             \cf4 display:\cf0  \cf10 none\cf0 ;\cb1 \
+\cb3             \cf4 position:\cf0  \cf10 fixed\cf0 ;\cb1 \
+\cb3             \cf4 z-index:\cf0  \cf11 50\cf0 ;\cb1 \
+\cb3             \cf4 left:\cf0  \cf11 0\cf0 ;\cb1 \
+\cb3             \cf4 top:\cf0  \cf11 0\cf0 ;\cb1 \
+\cb3             \cf4 width:\cf0  \cf11 100%\cf0 ;\cb1 \
+\cb3             \cf4 height:\cf0  \cf11 100%\cf0 ;\cb1 \
+\cb3             \cf4 overflow:\cf0  \cf10 auto\cf0 ;\cb1 \
+\cb3             \cf4 background-color:\cf0  \cf10 rgba(\cf11 0\cf0 ,\cf11 0\cf0 ,\cf11 0\cf0 ,\cf11 0.5\cf10 )\cf0 ;\cb1 \
+\cb3             \cf4 align-items:\cf0  \cf10 center\cf0 ;\cb1 \
+\cb3             \cf4 justify-content:\cf0  \cf10 center\cf0 ;\cb1 \
+\cb3         \}\cb1 \
+\cb3         \cf7 .modal-content\cf0  \{\cb1 \
+\cb3             \cf4 background-color:\cf0  \cf10 #fefefe\cf0 ;\cb1 \
+\cb3             \cf4 margin:\cf0  \cf10 auto\cf0 ;\cb1 \
+\cb3             \cf4 padding:\cf0  \cf11 2rem\cf0 ;\cb1 \
+\cb3             \cf4 border:\cf0  \cf11 1px\cf0  \cf10 solid\cf0  \cf10 #888\cf0 ;\cb1 \
+\cb3             \cf4 width:\cf0  \cf11 90%\cf0 ;\cb1 \
+\cb3             \cf4 max-width:\cf0  \cf11 500px\cf0 ;\cb1 \
+\cb3             \cf4 border-radius:\cf0  \cf11 0.5rem\cf0 ;\cb1 \
+\cb3             \cf4 box-shadow:\cf0  \cf11 0\cf0  \cf11 4px\cf0  \cf11 6px\cf0  \cf11 -1px\cf0  \cf10 rgb(\cf11 0\cf0  \cf11 0\cf0  \cf11 0\cf0  / \cf11 0.1\cf10 )\cf0 , \cf11 0\cf0  \cf11 2px\cf0  \cf11 4px\cf0  \cf11 -2px\cf0  \cf10 rgb(\cf11 0\cf0  \cf11 0\cf0  \cf11 0\cf0  / \cf11 0.1\cf10 )\cf0 ;\cb1 \
+\cb3         \}\cb1 \
+\cb3         \cf7 .close-button\cf0  \{\cb1 \
+\cb3             \cf4 color:\cf0  \cf10 #aaa\cf0 ;\cb1 \
+\cb3             \cf4 float:\cf0  \cf10 right\cf0 ;\cb1 \
+\cb3             \cf4 font-size:\cf0  \cf11 28px\cf0 ;\cb1 \
+\cb3             \cf4 font-weight:\cf0  \cf10 bold\cf0 ;\cb1 \
+\cb3             \cf4 cursor:\cf0  \cf10 pointer\cf0 ;\cb1 \
+\cb3         \}\cb1 \
+\cb3         \cf7 .instrument-color-dot\cf0  \{\cb1 \
+\cb3             \cf4 display:\cf0  \cf10 inline-block\cf0 ;\cb1 \
+\cb3             \cf4 width:\cf0  \cf11 12px\cf0 ;\cb1 \
+\cb3             \cf4 height:\cf0  \cf11 12px\cf0 ;\cb1 \
+\cb3             \cf4 border-radius:\cf0  \cf11 50%\cf0 ;\cb1 \
+\cb3             \cf4 margin-right:\cf0  \cf11 8px\cf0 ;\cb1 \
+\cb3         \}\cb1 \
+\cb3         \cf7 .gemini-btn\cf0  \{\cb1 \
+\cb3             \cf4 display:\cf0  \cf10 inline-flex\cf0 ;\cb1 \
+\cb3             \cf4 align-items:\cf0  \cf10 center\cf0 ;\cb1 \
+\cb3             \cf4 padding:\cf0  \cf11 0.25rem\cf0  \cf11 0.5rem\cf0 ;\cb1 \
+\cb3             \cf4 font-size:\cf0  \cf11 0.75rem\cf0 ;\cb1 \
+\cb3             \cf4 border-radius:\cf0  \cf11 0.375rem\cf0 ;\cb1 \
+\cb3             \cf4 background-color:\cf0  \cf10 #ede9fe\cf0 ;\cb1 \
+\cb3             \cf4 color:\cf0  \cf10 #5b21b6\cf0 ;\cb1 \
+\cb3             \cf4 font-weight:\cf0  \cf11 500\cf0 ;\cb1 \
+\cb3             \cf4 border:\cf0  \cf11 1px\cf0  \cf10 solid\cf0  \cf10 #c4b5fd\cf0 ;\cb1 \
+\cb3             \cf4 cursor:\cf0  \cf10 pointer\cf0 ;\cb1 \
+\cb3             \cf4 transition:\cf0  \cf10 background-color\cf0  \cf11 0.2s\cf0 ;\cb1 \
+\cb3         \}\cb1 \
+\cb3         \cf7 .gemini-btn:hover\cf0  \{\cb1 \
+\cb3             \cf4 background-color:\cf0  \cf10 #ddd6fe\cf0 ;\cb1 \
+\cb3         \}\cb1 \
+\cb3         \cf7 .loader\cf0  \{\cb1 \
+\cb3             \cf4 border:\cf0  \cf11 2px\cf0  \cf10 solid\cf0  \cf10 #f3f3f3\cf0 ;\cb1 \
+\cb3             \cf4 border-top:\cf0  \cf11 2px\cf0  \cf10 solid\cf0  \cf10 #5b21b6\cf0 ;\cb1 \
+\cb3             \cf4 border-radius:\cf0  \cf11 50%\cf0 ;\cb1 \
+\cb3             \cf4 width:\cf0  \cf11 14px\cf0 ;\cb1 \
+\cb3             \cf4 height:\cf0  \cf11 14px\cf0 ;\cb1 \
+\cb3             \cf4 animation:\cf0  \cf10 spin\cf0  \cf11 1s\cf0  \cf10 linear\cf0  \cf10 infinite\cf0 ;\cb1 \
+\cb3             \cf4 margin-left:\cf0  \cf11 6px\cf0 ;\cb1 \
+\cb3         \}\cb1 \
+\cb3         \cf12 @keyframes\cf0  \cf10 spin\cf0  \{\cb1 \
+\cb3             \cf11 0%\cf0  \{ \cf4 transform:\cf0  \cf10 rotate(\cf11 0deg\cf10 )\cf0 ; \}\cb1 \
+\cb3             \cf11 100%\cf0  \{ \cf4 transform:\cf0  \cf10 rotate(\cf11 360deg\cf10 )\cf0 ; \}\cb1 \
+\cb3         \}\cb1 \
+\cb3     \cf6 </\cf7 style\cf6 >\cf0 \cb1 \
+\cf6 \cb3 </\cf7 head\cf6 >\cf0 \cb1 \
+\cf6 \cb3 <\cf7 body\cf0  \cf4 class\cf6 =\cf8 "text-gray-800"\cf6 >\cf0 \cb1 \
+\
+\cb3     \cf6 <\cf7 div\cf0  \cf4 id\cf6 =\cf8 "app"\cf0  \cf4 class\cf6 =\cf8 "p-4 md:p-8"\cf6 >\cf0 \cb1 \
+\cb3         \cf13 <!-- Header -->\cf0 \cb1 \
+\cb3         \cf6 <\cf7 header\cf0  \cf4 class\cf6 =\cf8 "flex justify-between items-center mb-8"\cf6 >\cf0 \cb1 \
+\cb3             \cf6 <\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 h1\cf0  \cf4 class\cf6 =\cf8 "text-3xl font-bold text-gray-900"\cf6 >\cf0 Mass Spec Scheduler\cf6 </\cf7 h1\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 p\cf0  \cf4 class\cf6 =\cf8 "text-gray-600"\cf6 >\cf0 Welcome, \cf6 <\cf7 span\cf0  \cf4 id\cf6 =\cf8 "userName"\cf0  \cf4 class\cf6 =\cf8 "font-semibold"\cf6 >\cf0 Lab Manager\cf6 </\cf7 span\cf6 ></\cf7 p\cf6 >\cf0 \cb1 \
+\cb3             \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3             \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "flex items-center space-x-4"\cf6 >\cf0 \cb1 \
+\cb3                  \cf6 <\cf7 button\cf0  \cf4 id\cf6 =\cf8 "adminPanelBtn"\cf0  \cf4 class\cf6 =\cf8 "bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition"\cf6 >\cf0 Admin Panel\cf6 </\cf7 button\cf6 >\cf0 \cb1 \
+\cb3                  \cf6 <\cf7 button\cf0  \cf4 id\cf6 =\cf8 "logoutBtn"\cf0  \cf4 class\cf6 =\cf8 "bg-gray-200 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-300 transition"\cf6 >\cf0 Logout\cf6 </\cf7 button\cf6 >\cf0 \cb1 \
+\cb3             \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3         \cf6 </\cf7 header\cf6 >\cf0 \cb1 \
+\
+\cb3         \cf6 <\cf7 main\cf6 >\cf0 \cb1 \
+\cb3             \cf13 <!-- Instrument Selection -->\cf0 \cb1 \
+\cb3             \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "mb-6"\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 h2\cf0  \cf4 class\cf6 =\cf8 "text-xl font-semibold mb-3"\cf6 >\cf0 Instruments\cf6 </\cf7 h2\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 div\cf0  \cf4 id\cf6 =\cf8 "instrumentList"\cf0  \cf4 class\cf6 =\cf8 "flex flex-wrap gap-4"\cf6 >\cf0 \cb1 \
+\cb3                     \cf13 <!-- Instrument buttons will be dynamically inserted here -->\cf0 \cb1 \
+\cb3                 \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3             \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\
+\cb3             \cf13 <!-- Calendar View -->\cf0 \cb1 \
+\cb3             \cf6 <\cf7 div\cf0  \cf4 id\cf6 =\cf8 "calendarContainer"\cf0  \cf4 class\cf6 =\cf8 "bg-white p-6 rounded-lg shadow-md"\cf6 >\cf0 \cb1 \
+\cb3                  \cf6 <\cf7 div\cf0  \cf4 id\cf6 =\cf8 'calendar'\cf6 ></\cf7 div\cf6 >\cf0 \cb1 \
+\cb3             \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3         \cf6 </\cf7 main\cf6 >\cf0 \cb1 \
+\cb3     \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\
+\cb3     \cf13 <!-- Booking Modal -->\cf0 \cb1 \
+\cb3     \cf6 <\cf7 div\cf0  \cf4 id\cf6 =\cf8 "bookingModal"\cf0  \cf4 class\cf6 =\cf8 "modal"\cf6 >\cf0 \cb1 \
+\cb3         \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "modal-content"\cf6 >\cf0 \cb1 \
+\cb3             \cf6 <\cf7 span\cf0  \cf4 class\cf6 =\cf8 "close-button"\cf0  \cf4 onclick\cf6 =\cf8 "closeModal('bookingModal')"\cf6 >\cf0 &times;\cf6 </\cf7 span\cf6 >\cf0 \cb1 \
+\cb3             \cf6 <\cf7 h2\cf0  \cf4 id\cf6 =\cf8 "bookingModalTitle"\cf0  \cf4 class\cf6 =\cf8 "text-2xl font-bold mb-6"\cf6 >\cf0 New Booking\cf6 </\cf7 h2\cf6 >\cf0 \cb1 \
+\cb3             \cf6 <\cf7 form\cf0  \cf4 id\cf6 =\cf8 "bookingForm"\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 input\cf0  \cf4 type\cf6 =\cf8 "hidden"\cf0  \cf4 id\cf6 =\cf8 "bookingId"\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "mb-4"\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 label\cf0  \cf4 for\cf6 =\cf8 "bookingInstrument"\cf0  \cf4 class\cf6 =\cf8 "block text-sm font-medium text-gray-700 mb-1"\cf6 >\cf0 Instrument\cf6 </\cf7 label\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 input\cf0  \cf4 type\cf6 =\cf8 "text"\cf0  \cf4 id\cf6 =\cf8 "bookingInstrument"\cf0  \cf4 class\cf6 =\cf8 "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"\cf0  \cf4 readonly\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "mb-4"\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 label\cf0  \cf4 for\cf6 =\cf8 "bookingUser"\cf0  \cf4 class\cf6 =\cf8 "block text-sm font-medium text-gray-700 mb-1"\cf6 >\cf0 User\cf6 </\cf7 label\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 input\cf0  \cf4 type\cf6 =\cf8 "text"\cf0  \cf4 id\cf6 =\cf8 "bookingUser"\cf0  \cf4 value\cf6 =\cf8 "Lab Manager"\cf0  \cf4 class\cf6 =\cf8 "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-100"\cf0  \cf4 readonly\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "mb-4"\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 label\cf0  \cf4 for\cf6 =\cf8 "startTime"\cf0  \cf4 class\cf6 =\cf8 "block text-sm font-medium text-gray-700 mb-1"\cf6 >\cf0 Start Time\cf6 </\cf7 label\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 input\cf0  \cf4 type\cf6 =\cf8 "text"\cf0  \cf4 id\cf6 =\cf8 "startTime"\cf0  \cf4 class\cf6 =\cf8 "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"\cf0  \cf4 required\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "mb-4"\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 label\cf0  \cf4 for\cf6 =\cf8 "endTime"\cf0  \cf4 class\cf6 =\cf8 "block text-sm font-medium text-gray-700 mb-1"\cf6 >\cf0 End Time\cf6 </\cf7 label\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 input\cf0  \cf4 type\cf6 =\cf8 "text"\cf0  \cf4 id\cf6 =\cf8 "endTime"\cf0  \cf4 class\cf6 =\cf8 "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"\cf0  \cf4 required\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                  \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "mb-4"\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 label\cf0  \cf4 for\cf6 =\cf8 "projectName"\cf0  \cf4 class\cf6 =\cf8 "block text-sm font-medium text-gray-700 mb-1"\cf6 >\cf0 Project Name / Analysis Type\cf6 </\cf7 label\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 input\cf0  \cf4 type\cf6 =\cf8 "text"\cf0  \cf4 id\cf6 =\cf8 "projectName"\cf0  \cf4 class\cf6 =\cf8 "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"\cf0  \cf4 placeholder\cf6 =\cf8 "e.g., Proteomics of yeast lysate"\cf0  \cf4 required\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "mb-4"\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "flex justify-between items-center mb-1"\cf6 >\cf0 \cb1 \
+\cb3                         \cf6 <\cf7 label\cf0  \cf4 for\cf6 =\cf8 "solvent"\cf0  \cf4 class\cf6 =\cf8 "block text-sm font-medium text-gray-700"\cf6 >\cf0 Solvent\cf6 </\cf7 label\cf6 >\cf0 \cb1 \
+\cb3                         \cf6 <\cf7 button\cf0  \cf4 type\cf6 =\cf8 "button"\cf0  \cf4 id\cf6 =\cf8 "suggestSolventBtn"\cf0  \cf4 class\cf6 =\cf8 "gemini-btn"\cf6 >
+\f1 \cf0 \uc0\u10024 
+\f0  Suggest Solvents\cf6 </\cf7 button\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 input\cf0  \cf4 type\cf6 =\cf8 "text"\cf0  \cf4 id\cf6 =\cf8 "solvent"\cf0  \cf4 class\cf6 =\cf8 "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"\cf0  \cf4 required\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "mb-4"\cf6 >\cf0 \cb1 \
+\cb3                      \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "flex justify-between items-center mb-1"\cf6 >\cf0 \cb1 \
+\cb3                         \cf6 <\cf7 label\cf0  \cf4 for\cf6 =\cf8 "experimentalPlan"\cf0  \cf4 class\cf6 =\cf8 "block text-sm font-medium text-gray-700"\cf6 >\cf0 Experimental Plan\cf6 </\cf7 label\cf6 >\cf0 \cb1 \
+\cb3                         \cf6 <\cf7 button\cf0  \cf4 type\cf6 =\cf8 "button"\cf0  \cf4 id\cf6 =\cf8 "generatePlanBtn"\cf0  \cf4 class\cf6 =\cf8 "gemini-btn"\cf6 >
+\f1 \cf0 \uc0\u10024 
+\f0  Generate Plan\cf6 </\cf7 button\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 textarea\cf0  \cf4 id\cf6 =\cf8 "experimentalPlan"\cf0  \cf4 rows\cf6 =\cf8 "6"\cf0  \cf4 class\cf6 =\cf8 "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-50"\cf0  \cf4 readonly\cf0  \cf4 placeholder\cf6 =\cf8 "Click 'Generate Plan' for a suggested experimental checklist..."\cf6 ></\cf7 textarea\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "flex justify-end space-x-4 mt-6"\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 button\cf0  \cf4 type\cf6 =\cf8 "button"\cf0  \cf4 id\cf6 =\cf8 "deleteBookingBtn"\cf0  \cf4 class\cf6 =\cf8 "bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition"\cf0  \cf4 style\cf6 =\cf8 "display:none;"\cf6 >\cf0 Delete\cf6 </\cf7 button\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 button\cf0  \cf4 type\cf6 =\cf8 "submit"\cf0  \cf4 class\cf6 =\cf8 "bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition"\cf6 >\cf0 Save Booking\cf6 </\cf7 button\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3             \cf6 </\cf7 form\cf6 >\cf0 \cb1 \
+\cb3         \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3     \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3     \cb1 \
+\cb3     \cf13 <!-- Admin Panel Modal -->\cf0 \cb1 \
+\cb3     \cf6 <\cf7 div\cf0  \cf4 id\cf6 =\cf8 "adminModal"\cf0  \cf4 class\cf6 =\cf8 "modal"\cf6 >\cf0 \cb1 \
+\cb3         \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "modal-content !max-w-4xl"\cf6 >\cf0 \cb1 \
+\cb3              \cf6 <\cf7 span\cf0  \cf4 class\cf6 =\cf8 "close-button"\cf0  \cf4 onclick\cf6 =\cf8 "closeModal('adminModal')"\cf6 >\cf0 &times;\cf6 </\cf7 span\cf6 >\cf0 \cb1 \
+\cb3              \cf6 <\cf7 h2\cf0  \cf4 class\cf6 =\cf8 "text-2xl font-bold mb-6"\cf6 >\cf0 Admin Panel\cf6 </\cf7 h2\cf6 >\cf0 \cb1 \
+\cb3              \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "grid grid-cols-1 md:grid-cols-2 gap-8"\cf6 >\cf0 \cb1 \
+\cb3                 \cf13 <!-- User Management -->\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 h3\cf0  \cf4 class\cf6 =\cf8 "text-xl font-semibold mb-4"\cf6 >\cf0 User Management\cf6 </\cf7 h3\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "space-y-3 max-h-60 overflow-y-auto"\cf0  \cf4 id\cf6 =\cf8 "userListContainer"\cf6 >\cf0 \cb1 \
+\cb3                         \cf13 <!-- User items will be dynamically inserted here -->\cf0 \cb1 \
+\cb3                     \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                      \cf6 <\cf7 button\cf0  \cf4 id\cf6 =\cf8 "addUserBtn"\cf0  \cf4 class\cf6 =\cf8 "mt-4 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition"\cf6 >\cf0 Add User\cf6 </\cf7 button\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                 \cf13 <!-- Usage Reports -->\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 h3\cf0  \cf4 class\cf6 =\cf8 "text-xl font-semibold mb-4"\cf6 >\cf0 Usage Reports\cf6 </\cf7 h3\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "space-y-2"\cf6 >\cf0 \cb1 \
+\cb3                         \cf6 <\cf7 p\cf6 >\cf0 Select a month to generate a report.\cf6 </\cf7 p\cf6 >\cf0 \cb1 \
+\cb3                         \cf6 <\cf7 input\cf0  \cf4 type\cf6 =\cf8 "month"\cf0  \cf4 id\cf6 =\cf8 "reportMonth"\cf0  \cf4 class\cf6 =\cf8 "w-full px-3 py-2 border border-gray-300 rounded-md"\cf6 >\cf0 \cb1 \
+\cb3                         \cf6 <\cf7 button\cf0  \cf4 id\cf6 =\cf8 "generateReportBtn"\cf0  \cf4 class\cf6 =\cf8 "mt-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"\cf6 >\cf0 Generate Report\cf6 </\cf7 button\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 div\cf0  \cf4 id\cf6 =\cf8 "reportOutput"\cf0  \cf4 class\cf6 =\cf8 "mt-4 p-4 bg-gray-50 rounded-md border hidden"\cf6 ></\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3              \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3         \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3     \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3     \cb1 \
+\cb3     \cf13 <!-- Add User Modal -->\cf0 \cb1 \
+\cb3     \cf6 <\cf7 div\cf0  \cf4 id\cf6 =\cf8 "addUserModal"\cf0  \cf4 class\cf6 =\cf8 "modal"\cf6 >\cf0 \cb1 \
+\cb3         \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "modal-content"\cf6 >\cf0 \cb1 \
+\cb3             \cf6 <\cf7 span\cf0  \cf4 class\cf6 =\cf8 "close-button"\cf0  \cf4 onclick\cf6 =\cf8 "closeModal('addUserModal')"\cf6 >\cf0 &times;\cf6 </\cf7 span\cf6 >\cf0 \cb1 \
+\cb3             \cf6 <\cf7 h2\cf0  \cf4 class\cf6 =\cf8 "text-2xl font-bold mb-6"\cf6 >\cf0 Add New User\cf6 </\cf7 h2\cf6 >\cf0 \cb1 \
+\cb3             \cf6 <\cf7 form\cf0  \cf4 id\cf6 =\cf8 "addUserForm"\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "mb-4"\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 label\cf0  \cf4 for\cf6 =\cf8 "newUserName"\cf0  \cf4 class\cf6 =\cf8 "block text-sm font-medium text-gray-700 mb-1"\cf6 >\cf0 Name\cf6 </\cf7 label\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 input\cf0  \cf4 type\cf6 =\cf8 "text"\cf0  \cf4 id\cf6 =\cf8 "newUserName"\cf0  \cf4 class\cf6 =\cf8 "w-full px-3 py-2 border border-gray-300 rounded-md"\cf0  \cf4 required\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "mb-4"\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 label\cf0  \cf4 for\cf6 =\cf8 "newUserEmail"\cf0  \cf4 class\cf6 =\cf8 "block text-sm font-medium text-gray-700 mb-1"\cf6 >\cf0 Email\cf6 </\cf7 label\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 input\cf0  \cf4 type\cf6 =\cf8 "email"\cf0  \cf4 id\cf6 =\cf8 "newUserEmail"\cf0  \cf4 class\cf6 =\cf8 "w-full px-3 py-2 border border-gray-300 rounded-md"\cf0  \cf4 required\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "mb-4"\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 label\cf0  \cf4 for\cf6 =\cf8 "newUserRole"\cf0  \cf4 class\cf6 =\cf8 "block text-sm font-medium text-gray-700 mb-1"\cf6 >\cf0 Role\cf6 </\cf7 label\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 select\cf0  \cf4 id\cf6 =\cf8 "newUserRole"\cf0  \cf4 class\cf6 =\cf8 "w-full px-3 py-2 border border-gray-300 rounded-md"\cf6 >\cf0 \cb1 \
+\cb3                         \cf6 <\cf7 option\cf0  \cf4 value\cf6 =\cf8 "Trained User"\cf6 >\cf0 Trained User\cf6 </\cf7 option\cf6 >\cf0 \cb1 \
+\cb3                         \cf6 <\cf7 option\cf0  \cf4 value\cf6 =\cf8 "Untrained User"\cf6 >\cf0 Untrained User\cf6 </\cf7 option\cf6 >\cf0 \cb1 \
+\cb3                         \cf6 <\cf7 option\cf0  \cf4 value\cf6 =\cf8 "Lab Manager"\cf6 >\cf0 Lab Manager\cf6 </\cf7 option\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 </\cf7 select\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "mb-4"\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 label\cf0  \cf4 for\cf6 =\cf8 "newUserType"\cf0  \cf4 class\cf6 =\cf8 "block text-sm font-medium text-gray-700 mb-1"\cf6 >\cf0 User Type\cf6 </\cf7 label\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 select\cf0  \cf4 id\cf6 =\cf8 "newUserType"\cf0  \cf4 class\cf6 =\cf8 "w-full px-3 py-2 border border-gray-300 rounded-md"\cf6 >\cf0 \cb1 \
+\cb3                         \cf6 <\cf7 option\cf0  \cf4 value\cf6 =\cf8 "Internal Academic"\cf6 >\cf0 Internal Academic\cf6 </\cf7 option\cf6 >\cf0 \cb1 \
+\cb3                         \cf6 <\cf7 option\cf0  \cf4 value\cf6 =\cf8 "Internal Industry-Sponsored"\cf6 >\cf0 Internal Industry-Sponsored\cf6 </\cf7 option\cf6 >\cf0 \cb1 \
+\cb3                         \cf6 <\cf7 option\cf0  \cf4 value\cf6 =\cf8 "External"\cf6 >\cf0 External\cf6 </\cf7 option\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 </\cf7 select\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 <\cf7 div\cf0  \cf4 class\cf6 =\cf8 "flex justify-end"\cf6 >\cf0 \cb1 \
+\cb3                     \cf6 <\cf7 button\cf0  \cf4 type\cf6 =\cf8 "submit"\cf0  \cf4 class\cf6 =\cf8 "bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition"\cf6 >\cf0 Add User\cf6 </\cf7 button\cf6 >\cf0 \cb1 \
+\cb3                 \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3             \cf6 </\cf7 form\cf6 >\cf0 \cb1 \
+\cb3         \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\cb3     \cf6 </\cf7 div\cf6 >\cf0 \cb1 \
+\
+\
+\cb3     \cf6 <\cf7 script\cf6 >\cf0 \cb1 \
+\cb3         document.addEventListener(\cf9 'DOMContentLoaded'\cf0 , \cf12 function\cf0 () \{\cb1 \
+\cb3             \cf13 // --- DATA ---\cf0 \cb1 \
+\cb3             \cf12 const\cf0  state = \{\cb1 \
+\cb3                 currentUser: \{ id: \cf14 1\cf0 , name: \cf9 'Lab Manager'\cf0 , role: \cf9 'Lab Manager'\cf0 , type: \cf9 'Internal Academic'\cf0  \},\cb1 \
+\cb3                 instruments: [\cb1 \
+\cb3                     \{ id: \cf9 'waters'\cf0 , name: \cf9 'Waters SYNAPT XS'\cf0 , color: \cf9 '#8b5cf6'\cf0  \},\cb1 \
+\cb3                     \{ id: \cf9 'orbi'\cf0 , name: \cf9 'Thermo Orbitrap Exploris 480'\cf0 , color: \cf9 '#3b82f6'\cf0  \}\cb1 \
+\cb3                 ],\cb1 \
+\cb3                 users: [\cb1 \
+\cb3                     \{ id: \cf14 1\cf0 , name: \cf9 'Lab Manager'\cf0 , email: \cf9 'manager@lab.com'\cf0 , role: \cf9 'Lab Manager'\cf0 , type: \cf9 'Internal Academic'\cf0  \},\cb1 \
+\cb3                     \{ id: \cf14 2\cf0 , name: \cf9 'Alice'\cf0 , email: \cf9 'alice@lab.com'\cf0 , role: \cf9 'Trained User'\cf0 , type: \cf9 'Internal Academic'\cf0  \},\cb1 \
+\cb3                     \{ id: \cf14 3\cf0 , name: \cf9 'Bob'\cf0 , email: \cf9 'bob@lab.com'\cf0 , role: \cf9 'Trained User'\cf0 , type: \cf9 'Internal Industry-Sponsored'\cf0  \},\cb1 \
+\cb3                     \{ id: \cf14 4\cf0 , name: \cf9 'Charlie'\cf0 , email: \cf9 'charlie@lab.com'\cf0 , role: \cf9 'Untrained User'\cf0 , type: \cf9 'External'\cf0  \},\cb1 \
+\cb3                 ],\cb1 \
+\cb3                 bookings: [\cb1 \
+\cb3                     \{ id: \cf9 'b1'\cf0 , instrumentId: \cf9 'orbi'\cf0 , userId: \cf14 2\cf0 , start: \cf9 '2025-07-28T10:00:00'\cf0 , end: \cf9 '2025-07-28T12:00:00'\cf0 , title: \cf9 'Alice - Project A'\cf0 , project: \cf9 'Project A'\cf0 , solvent: \cf9 'Methanol'\cf0 , plan: \cf9 ''\cf0  \},\cb1 \
+\cb3                     \{ id: \cf9 'b2'\cf0 , instrumentId: \cf9 'waters'\cf0 , userId: \cf14 3\cf0 , start: \cf9 '2025-07-29T14:00:00'\cf0 , end: \cf9 '2025-07-29T17:00:00'\cf0 , title: \cf9 'Bob - Project B'\cf0 , project: \cf9 'Project B'\cf0 , solvent: \cf9 'Acetonitrile'\cf0 , plan: \cf9 ''\cf0  \},\cb1 \
+\cb3                     \{ id: \cf9 'b3'\cf0 , instrumentId: \cf9 'orbi'\cf0 , userId: \cf14 1\cf0 , start: \cf9 '2025-07-30T09:00:00'\cf0 , end: \cf9 '2025-07-30T11:00:00'\cf0 , title: \cf9 'Lab Manager - Maintenance'\cf0 , project: \cf9 'Maintenance'\cf0 , solvent: \cf9 'N/A'\cf0 , plan: \cf9 '1. Run diagnostics.\\n2. Clean ion source.'\cf0  \},\cb1 \
+\cb3                 ],\cb1 \
+\cb3                 activeInstrumentId: \cf9 'waters'\cf0 ,\cb1 \
+\cb3                 billingRates: \{\cb1 \
+\cb3                     \cf9 'Internal Academic'\cf0 : \cf14 50\cf0 ,\cb1 \
+\cb3                     \cf9 'Internal Industry-Sponsored'\cf0 : \cf14 100\cf0 ,\cb1 \
+\cb3                     \cf9 'External'\cf0 : \cf14 150\cf0 ,\cb1 \
+\cb3                 \}\cb1 \
+\cb3             \};\cb1 \
+\
+\cb3             \cf13 // --- DOM ELEMENTS ---\cf0 \cb1 \
+\cb3             \cf12 const\cf0  calendarEl = document.getElementById(\cf9 'calendar'\cf0 );\cb1 \
+\cb3             \cf12 const\cf0  instrumentListEl = document.getElementById(\cf9 'instrumentList'\cf0 );\cb1 \
+\cb3             \cf12 const\cf0  bookingModal = document.getElementById(\cf9 'bookingModal'\cf0 );\cb1 \
+\cb3             \cf12 const\cf0  bookingForm = document.getElementById(\cf9 'bookingForm'\cf0 );\cb1 \
+\cb3             \cf12 const\cf0  adminModal = document.getElementById(\cf9 'adminModal'\cf0 );\cb1 \
+\cb3             \cf12 const\cf0  userListContainer = document.getElementById(\cf9 'userListContainer'\cf0 );\cb1 \
+\cb3             \cf12 const\cf0  addUserModal = document.getElementById(\cf9 'addUserModal'\cf0 );\cb1 \
+\cb3             \cf12 const\cf0  addUserForm = document.getElementById(\cf9 'addUserForm'\cf0 );\cb1 \
+\cb3             \cf12 const\cf0  suggestSolventBtn = document.getElementById(\cf9 'suggestSolventBtn'\cf0 );\cb1 \
+\cb3             \cf12 const\cf0  generatePlanBtn = document.getElementById(\cf9 'generatePlanBtn'\cf0 );\cb1 \
+\
+\cb3             \cf12 let\cf0  calendar;\cb1 \
+\cb3             \cf12 let\cf0  startPicker, endPicker;\cb1 \
+\
+\cb3             \cf13 // --- RENDER FUNCTIONS ---\cf0 \cb1 \
+\cb3             \cf12 function\cf0  renderInstruments() \{\cb1 \
+\cb3                 instrumentListEl.innerHTML = \cf9 ''\cf0 ;\cb1 \
+\cb3                 state.instruments.forEach(inst => \{\cb1 \
+\cb3                     \cf12 const\cf0  btn = document.createElement(\cf9 'button'\cf0 );\cb1 \
+\cb3                     btn.innerHTML = \cf9 `<span class="instrument-color-dot" style="background-color:\cf0 $\{inst.color\}\cf9 ;"></span>\cf0 $\{inst.name\}\cf9 `\cf0 ;\cb1 \
+\cb3                     btn.className = \cf9 `px-4 py-2 rounded-md transition flex items-center \cf0 $\{state.activeInstrumentId === inst.id ? \cf9 'bg-indigo-600 text-white shadow'\cf0  : \cf9 'bg-white text-gray-700 hover:bg-gray-100'\cf0 \}\cf9 `\cf0 ;\cb1 \
+\cb3                     btn.onclick = () => \{\cb1 \
+\cb3                         state.activeInstrumentId = inst.id;\cb1 \
+\cb3                         renderInstruments();\cb1 \
+\cb3                         renderCalendar();\cb1 \
+\cb3                     \};\cb1 \
+\cb3                     instrumentListEl.appendChild(btn);\cb1 \
+\cb3                 \});\cb1 \
+\cb3             \}\cb1 \
+\
+\cb3             \cf12 function\cf0  renderCalendar() \{\cb1 \
+\cb3                 \cf12 const\cf0  filteredBookings = state.bookings\cb1 \
+\cb3                     .filter(b => b.instrumentId === state.activeInstrumentId)\cb1 \
+\cb3                     .map(b => \{\cb1 \
+\cb3                         \cf12 const\cf0  instrument = state.instruments.find(i => i.id === b.instrumentId);\cb1 \
+\cb3                         \cf12 return\cf0  \{\cb1 \
+\cb3                             id: b.id,\cb1 \
+\cb3                             title: b.title,\cb1 \
+\cb3                             start: b.start,\cb1 \
+\cb3                             end: b.end,\cb1 \
+\cb3                             backgroundColor: instrument.color,\cb1 \
+\cb3                             borderColor: instrument.color,\cb1 \
+\cb3                             extendedProps: \{\cb1 \
+\cb3                                 userId: b.userId,\cb1 \
+\cb3                                 instrumentId: b.instrumentId,\cb1 \
+\cb3                                 project: b.project,\cb1 \
+\cb3                                 solvent: b.solvent,\cb1 \
+\cb3                                 plan: b.plan\cb1 \
+\cb3                             \}\cb1 \
+\cb3                         \};\cb1 \
+\cb3                     \});\cb1 \
+\
+\cb3                 \cf12 if\cf0  (calendar) \{\cb1 \
+\cb3                     calendar.destroy();\cb1 \
+\cb3                 \}\cb1 \
+\
+\cb3                 calendar = \cf12 new\cf0  \cf15 FullCalendar\cf0 .\cf15 Calendar\cf0 (calendarEl, \{\cb1 \
+\cb3                     initialView: \cf9 'timeGridWeek'\cf0 ,\cb1 \
+\cb3                     headerToolbar: \{\cb1 \
+\cb3                         left: \cf9 'prev,next today'\cf0 ,\cb1 \
+\cb3                         center: \cf9 'title'\cf0 ,\cb1 \
+\cb3                         right: \cf9 'dayGridMonth,timeGridWeek,timeGridDay'\cf0 \cb1 \
+\cb3                     \},\cb1 \
+\cb3                     events: filteredBookings,\cb1 \
+\cb3                     selectable: \cf12 true\cf0 ,\cb1 \
+\cb3                     select: handleDateSelect,\cb1 \
+\cb3                     eventClick: handleEventClick,\cb1 \
+\cb3                     initialDate: \cf9 '2025-07-28'\cf0 ,\cb1 \
+\cb3                     editable: state.currentUser.role === \cf9 'Lab Manager'\cf0 ,\cb1 \
+\cb3                     eventDrop: handleEventDrop,\cb1 \
+\cb3                     eventResize: handleEventResize,\cb1 \
+\cb3                 \});\cb1 \
+\cb3                 calendar.render();\cb1 \
+\cb3             \}\cb1 \
+\cb3             \cb1 \
+\cb3             \cf12 function\cf0  renderUsers() \{\cb1 \
+\cb3                 userListContainer.innerHTML = \cf9 ''\cf0 ;\cb1 \
+\cb3                 state.users.forEach(user => \{\cb1 \
+\cb3                     \cf12 const\cf0  userDiv = document.createElement(\cf9 'div'\cf0 );\cb1 \
+\cb3                     userDiv.className = \cf9 'flex justify-between items-center p-3 bg-gray-100 rounded-md'\cf0 ;\cb1 \
+\cb3                     userDiv.innerHTML = \cf9 `\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3                         <div>\cf0 \cb1 \
+\cf9 \cb3                             <p class="font-semibold">\cf0 $\{user.name\}\cf9  <span class="text-sm text-gray-500">(\cf0 $\{user.email\}\cf9 )</span></p>\cf0 \cb1 \
+\cf9 \cb3                             <p class="text-sm">\cf0 $\{user.role\}\cf9  - \cf0 $\{user.type\}\cf9 </p>\cf0 \cb1 \
+\cf9 \cb3                         </div>\cf0 \cb1 \
+\cf9 \cb3                         <button class="text-red-500 hover:text-red-700 font-semibold" onclick="window.app.deleteUser(\cf0 $\{user.id\}\cf9 )">Remove</button>\cf0 \cb1 \
+\cf9 \cb3                     `\cf0 ;\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3                     userListContainer.appendChild(userDiv);\cb1 \
+\cb3                 \});\cb1 \
+\cb3             \}\cb1 \
+\
+\cb3             \cf13 // --- EVENT HANDLERS ---\cf0 \cb1 \
+\cb3             \cf12 function\cf0  handleDateSelect(selectionInfo) \{\cb1 \
+\cb3                 \cf12 if\cf0  (state.currentUser.role === \cf9 'Untrained User'\cf0 ) \{\cb1 \
+\cb3                     alert(\cf9 'You are not authorized to book instruments. Please contact the lab manager for training.'\cf0 );\cb1 \
+\cb3                     \cf12 return\cf0 ;\cb1 \
+\cb3                 \}\cb1 \
+\cb3                 openBookingModal(\{\cb1 \
+\cb3                     start: selectionInfo.startStr,\cb1 \
+\cb3                     end: selectionInfo.endStr,\cb1 \
+\cb3                     plan: \cf9 ''\cf0 \cb1 \
+\cb3                 \});\cb1 \
+\cb3             \}\cb1 \
+\
+\cb3             \cf12 function\cf0  handleEventClick(clickInfo) \{\cb1 \
+\cb3                 \cf12 const\cf0  booking = state.bookings.find(b => b.id === clickInfo.event.id);\cb1 \
+\cb3                 \cf12 if\cf0  (!booking) \cf12 return\cf0 ;\cb1 \
+\
+\cb3                 \cf12 if\cf0  (booking.userId !== state.currentUser.id && state.currentUser.role !== \cf9 'Lab Manager'\cf0 ) \{\cb1 \
+\cb3                      openBookingModal(booking, \cf12 true\cf0 ); \cf13 // Open in read-only mode\cf0 \cb1 \
+\cb3                     \cf12 return\cf0 ;\cb1 \
+\cb3                 \}\cb1 \
+\cb3                 openBookingModal(booking);\cb1 \
+\cb3             \}\cb1 \
+\cb3             \cb1 \
+\cb3             \cf12 function\cf0  handleEventDrop(info) \{ handleEventMove(info.event); \}\cb1 \
+\cb3             \cf12 function\cf0  handleEventResize(info) \{ handleEventMove(info.event); \}\cb1 \
+\cb3             \cb1 \
+\cb3             \cf12 function\cf0  handleEventMove(event) \{\cb1 \
+\cb3                 \cf12 const\cf0  bookingIndex = state.bookings.findIndex(b => b.id === event.id);\cb1 \
+\cb3                 \cf12 if\cf0  (bookingIndex > -\cf14 1\cf0 ) \{\cb1 \
+\cb3                     state.bookings[bookingIndex].start = event.start.toISOString();\cb1 \
+\cb3                     state.bookings[bookingIndex].end = event.end.toISOString();\cb1 \
+\cb3                     renderCalendar();\cb1 \
+\cb3                 \}\cb1 \
+\cb3             \}\cb1 \
+\
+\cb3             bookingForm.onsubmit = \cf12 function\cf0 (e) \{\cb1 \
+\cb3                 e.preventDefault();\cb1 \
+\cb3                 \cf12 const\cf0  bookingId = document.getElementById(\cf9 'bookingId'\cf0 ).value;\cb1 \
+\cb3                 \cf12 const\cf0  bookingData = \{\cb1 \
+\cb3                     instrumentId: state.activeInstrumentId,\cb1 \
+\cb3                     userId: state.currentUser.id,\cb1 \
+\cb3                     start: startPicker.selectedDates[\cf14 0\cf0 ].toISOString(),\cb1 \
+\cb3                     end: endPicker.selectedDates[\cf14 0\cf0 ].toISOString(),\cb1 \
+\cb3                     project: document.getElementById(\cf9 'projectName'\cf0 ).value,\cb1 \
+\cb3                     solvent: document.getElementById(\cf9 'solvent'\cf0 ).value,\cb1 \
+\cb3                     plan: document.getElementById(\cf9 'experimentalPlan'\cf0 ).value\cb1 \
+\cb3                 \};\cb1 \
+\cb3                 bookingData.title = \cf9 `\cf0 $\{state.currentUser.name\}\cf9  - \cf0 $\{bookingData.project\}\cf9 `\cf0 ;\cb1 \
+\
+\cb3                 \cf12 if\cf0  (bookingId) \{\cb1 \
+\cb3                     \cf12 const\cf0  index = state.bookings.findIndex(b => b.id === bookingId);\cb1 \
+\cb3                     state.bookings[index] = \{ ...state.bookings[index], ...bookingData \};\cb1 \
+\cb3                 \} \cf12 else\cf0  \{\cb1 \
+\cb3                     state.bookings.push(\{ id: \cf9 `b\cf0 $\{\cf15 Date\cf0 .now()\}\cf9 `\cf0 , ...bookingData \});\cb1 \
+\cb3                 \}\cb1 \
+\cb3                 closeModal(\cf9 'bookingModal'\cf0 );\cb1 \
+\cb3                 renderCalendar();\cb1 \
+\cb3             \};\cb1 \
+\cb3             \cb1 \
+\cb3             addUserForm.onsubmit = \cf12 function\cf0 (e) \{\cb1 \
+\cb3                 e.preventDefault();\cb1 \
+\cb3                 \cf12 const\cf0  newUser = \{\cb1 \
+\cb3                     id: state.users.length + \cf14 1\cf0 ,\cb1 \
+\cb3                     name: document.getElementById(\cf9 'newUserName'\cf0 ).value,\cb1 \
+\cb3                     email: document.getElementById(\cf9 'newUserEmail'\cf0 ).value,\cb1 \
+\cb3                     role: document.getElementById(\cf9 'newUserRole'\cf0 ).value,\cb1 \
+\cb3                     type: document.getElementById(\cf9 'newUserType'\cf0 ).value,\cb1 \
+\cb3                 \};\cb1 \
+\cb3                 state.users.push(newUser);\cb1 \
+\cb3                 renderUsers();\cb1 \
+\cb3                 closeModal(\cf9 'addUserModal'\cf0 );\cb1 \
+\cb3                 addUserForm.reset();\cb1 \
+\cb3             \};\cb1 \
+\cb3             \cb1 \
+\cb3             document.getElementById(\cf9 'deleteBookingBtn'\cf0 ).onclick = \cf12 function\cf0 () \{\cb1 \
+\cb3                 \cf12 const\cf0  bookingId = document.getElementById(\cf9 'bookingId'\cf0 ).value;\cb1 \
+\cb3                 \cf12 if\cf0  (confirm(\cf9 'Are you sure you want to delete this booking?'\cf0 )) \{\cb1 \
+\cb3                     state.bookings = state.bookings.filter(b => b.id !== bookingId);\cb1 \
+\cb3                     closeModal(\cf9 'bookingModal'\cf0 );\cb1 \
+\cb3                     renderCalendar();\cb1 \
+\cb3                 \}\cb1 \
+\cb3             \};\cb1 \
+\cb3             \cb1 \
+\cb3             document.getElementById(\cf9 'adminPanelBtn'\cf0 ).onclick = () => openModal(\cf9 'adminModal'\cf0 );\cb1 \
+\cb3             document.getElementById(\cf9 'addUserBtn'\cf0 ).onclick = () => openModal(\cf9 'addUserModal'\cf0 );\cb1 \
+\cb3             document.getElementById(\cf9 'generateReportBtn'\cf0 ).onclick = generateReport;\cb1 \
+\cb3             suggestSolventBtn.onclick = handleSuggestSolvent;\cb1 \
+\cb3             generatePlanBtn.onclick = handleGeneratePlan;\cb1 \
+\
+\cb3             \cf13 // --- MODAL & HELPER FUNCTIONS ---\cf0 \cb1 \
+\cb3             \cf12 function\cf0  openModal(id) \{ document.getElementById(id).style.display = \cf9 'flex'\cf0 ; \}\cb1 \
+\cb3             window.closeModal = \cf12 function\cf0 (id) \{ document.getElementById(id).style.display = \cf9 'none'\cf0 ; \}\cb1 \
+\cb3             \cb1 \
+\cb3             \cf12 function\cf0  openBookingModal(data, readOnly = \cf12 false\cf0 ) \{\cb1 \
+\cb3                 bookingForm.reset();\cb1 \
+\cb3                 \cf12 const\cf0  instrument = state.instruments.find(i => i.id === (data.instrumentId || state.activeInstrumentId));\cb1 \
+\cb3                 \cf12 const\cf0  user = state.users.find(u => u.id === data.userId) || state.currentUser;\cb1 \
+\cb3                 \cb1 \
+\cb3                 document.getElementById(\cf9 'bookingModalTitle'\cf0 ).textContent = data.id ? \cf9 'Edit Booking'\cf0  : \cf9 'New Booking'\cf0 ;\cb1 \
+\cb3                 document.getElementById(\cf9 'bookingId'\cf0 ).value = data.id || \cf9 ''\cf0 ;\cb1 \
+\cb3                 document.getElementById(\cf9 'bookingInstrument'\cf0 ).value = instrument.name;\cb1 \
+\cb3                 document.getElementById(\cf9 'bookingUser'\cf0 ).value = user.name;\cb1 \
+\cb3                 document.getElementById(\cf9 'projectName'\cf0 ).value = data.project || \cf9 ''\cf0 ;\cb1 \
+\cb3                 document.getElementById(\cf9 'solvent'\cf0 ).value = data.solvent || \cf9 ''\cf0 ;\cb1 \
+\cb3                 document.getElementById(\cf9 'experimentalPlan'\cf0 ).value = data.plan || \cf9 ''\cf0 ;\cb1 \
+\cb3                 \cb1 \
+\cb3                 document.getElementById(\cf9 'deleteBookingBtn'\cf0 ).style.display = data.id && !readOnly ? \cf9 'block'\cf0  : \cf9 'none'\cf0 ;\cb1 \
+\cb3                 \cb1 \
+\cb3                 \cf12 if\cf0 (startPicker) startPicker.destroy();\cb1 \
+\cb3                 \cf12 if\cf0 (endPicker) endPicker.destroy();\cb1 \
+\cb3                 startPicker = flatpickr(\cf9 "#startTime"\cf0 , \{ enableTime: \cf12 true\cf0 , dateFormat: \cf9 "Y-m-d H:i"\cf0 , defaultDate: data.start \});\cb1 \
+\cb3                 endPicker = flatpickr(\cf9 "#endTime"\cf0 , \{ enableTime: \cf12 true\cf0 , dateFormat: \cf9 "Y-m-d H:i"\cf0 , defaultDate: data.end \});\cb1 \
+\
+\cb3                 \cf15 Array\cf0 .\cf12 from\cf0 (bookingForm.elements).forEach(el => el.disabled = readOnly);\cb1 \
+\cb3                 bookingForm.querySelector(\cf9 'button[type="submit"]'\cf0 ).style.display = readOnly ? \cf9 'none'\cf0  : \cf9 'block'\cf0 ;\cb1 \
+\cb3                 \cb1 \
+\cb3                 openModal(\cf9 'bookingModal'\cf0 );\cb1 \
+\cb3             \}\cb1 \
+\
+\cb3             \cf12 function\cf0  generateReport() \{\cb1 \
+\cb3                 \cf12 const\cf0  reportMonthInput = document.getElementById(\cf9 'reportMonth'\cf0 ).value;\cb1 \
+\cb3                 \cf12 if\cf0  (!reportMonthInput) \{ alert(\cf9 'Please select a month.'\cf0 ); \cf12 return\cf0 ; \}\cb1 \
+\cb3                 \cf12 const\cf0  [year, month] = reportMonthInput.split(\cf9 '-'\cf0 );\cb1 \
+\cb3                 \cf12 const\cf0  reportData = \{\};\cb1 \
+\cb3                 \cb1 \
+\cb3                 state.bookings.forEach(booking => \{\cb1 \
+\cb3                     \cf12 const\cf0  bookingDate = \cf12 new\cf0  \cf15 Date\cf0 (booking.start);\cb1 \
+\cb3                     \cf12 if\cf0  (bookingDate.getFullYear() == year && (bookingDate.getMonth() + \cf14 1\cf0 ) == month) \{\cb1 \
+\cb3                         \cf12 const\cf0  user = state.users.find(u => u.id === booking.userId);\cb1 \
+\cb3                         \cf12 if\cf0  (!user) \cf12 return\cf0 ;\cb1 \
+\cb3                         \cb1 \
+\cb3                         \cf12 const\cf0  duration = (\cf12 new\cf0  \cf15 Date\cf0 (booking.end) - \cf12 new\cf0  \cf15 Date\cf0 (booking.start)) / \cf14 3600000\cf0 ;\cb1 \
+\cb3                         \cf12 const\cf0  cost = duration * (state.billingRates[user.type] || \cf14 0\cf0 );\cb1 \
+\cb3                         \cb1 \
+\cb3                         \cf12 if\cf0  (!reportData[user.name]) \{\cb1 \
+\cb3                             reportData[user.name] = \{ totalHours: \cf14 0\cf0 , totalCost: \cf14 0\cf0 , userType: user.type \};\cb1 \
+\cb3                         \}\cb1 \
+\cb3                         reportData[user.name].totalHours += duration;\cb1 \
+\cb3                         reportData[user.name].totalCost += cost;\cb1 \
+\cb3                     \}\cb1 \
+\cb3                 \});\cb1 \
+\cb3                 \cb1 \
+\cb3                 \cf12 const\cf0  reportOutputEl = document.getElementById(\cf9 'reportOutput'\cf0 );\cb1 \
+\cb3                 \cf12 let\cf0  reportHTML = \cf9 `<h4 class="font-bold mb-2">Usage Report for \cf0 $\{reportMonthInput\}\cf9 </h4>`\cf0 ;\cb1 \
+\cb3                 \cf12 if\cf0  (\cf15 Object\cf0 .keys(reportData).length === \cf14 0\cf0 ) \{\cb1 \
+\cb3                     reportHTML += \cf9 '<p>No usage data for this month.</p>'\cf0 ;\cb1 \
+\cb3                 \} \cf12 else\cf0  \{\cb1 \
+\cb3                     reportHTML += \cf9 '<table class="w-full text-left text-sm"><thead><tr class="border-b"><th class="py-2">User</th><th>Type</th><th>Hours</th><th>Cost</th></tr></thead><tbody>'\cf0 ;\cb1 \
+\cb3                     \cf12 for\cf0  (\cf12 const\cf0  userName \cf12 in\cf0  reportData) \{\cb1 \
+\cb3                         \cf12 const\cf0  data = reportData[userName];\cb1 \
+\cb3                         reportHTML += \cf9 `<tr class="border-b"><td class="py-2">\cf0 $\{userName\}\cf9 </td><td>\cf0 $\{data.userType\}\cf9 </td><td>\cf0 $\{data.totalHours.toFixed(\cf14 2\cf0 )\}\cf9 </td><td>\cf16 $\cf0 $\{data.totalCost.toFixed(\cf14 2\cf0 )\}\cf9 </td></tr>`\cf0 ;\cb1 \
+\cb3                     \}\cb1 \
+\cb3                     reportHTML += \cf9 '</tbody></table>'\cf0 ;\cb1 \
+\cb3                 \}\cb1 \
+\cb3                 \cb1 \
+\cb3                 reportOutputEl.innerHTML = reportHTML;\cb1 \
+\cb3                 reportOutputEl.classList.remove(\cf9 'hidden'\cf0 );\cb1 \
+\cb3             \}\cb1 \
+\cb3             \cb1 \
+\cb3             \cf13 // --- GEMINI API INTEGRATION ---\cf0 \cb1 \
+\cb3             \cf12 async\cf0  \cf12 function\cf0  callGeminiAPI(prompt, button) \{\cb1 \
+\cb3                 \cf12 const\cf0  originalButtonContent = button.innerHTML;\cb1 \
+\cb3                 button.disabled = \cf12 true\cf0 ;\cb1 \
+\cb3                 button.innerHTML = \cf9 '
+\f1 \uc0\u10024 
+\f0  Thinking...<div class="loader"></div>'\cf0 ;\cb1 \
+\
+\cb3                 \cf12 const\cf0  apiKey = \cf9 ""\cf0 ; \cf13 // API key will be handled by the environment\cf0 \cb1 \
+\cb3                 \cf12 const\cf0  apiUrl = \cf9 `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=\cf0 $\{apiKey\}\cf9 `\cf0 ;\cb1 \
+\cb3                 \cb1 \
+\cb3                 \cf12 const\cf0  payload = \{\cb1 \
+\cb3                     contents: [\{ role: \cf9 "user"\cf0 , parts: [\{ text: prompt \}] \}]\cb1 \
+\cb3                 \};\cb1 \
+\
+\cb3                 \cf12 try\cf0  \{\cb1 \
+\cb3                     \cf12 const\cf0  response = \cf12 await\cf0  fetch(apiUrl, \{\cb1 \
+\cb3                         method: \cf9 'POST'\cf0 ,\cb1 \
+\cb3                         headers: \{ \cf9 'Content-Type'\cf0 : \cf9 'application/json'\cf0  \},\cb1 \
+\cb3                         body: \cf15 JSON\cf0 .stringify(payload)\cb1 \
+\cb3                     \});\cb1 \
+\
+\cb3                     \cf12 if\cf0  (!response.ok) \{\cb1 \
+\cb3                         \cf12 throw\cf0  \cf12 new\cf0  \cf15 Error\cf0 (\cf9 `API request failed with status \cf0 $\{response.status\}\cf9 `\cf0 );\cb1 \
+\cb3                     \}\cb1 \
+\
+\cb3                     \cf12 const\cf0  result = \cf12 await\cf0  response.json();\cb1 \
+\cb3                     \cf12 if\cf0  (result.candidates && result.candidates.length > \cf14 0\cf0  && result.candidates[\cf14 0\cf0 ].content.parts.length > \cf14 0\cf0 ) \{\cb1 \
+\cb3                         \cf12 return\cf0  result.candidates[\cf14 0\cf0 ].content.parts[\cf14 0\cf0 ].text;\cb1 \
+\cb3                     \} \cf12 else\cf0  \{\cb1 \
+\cb3                         \cf12 throw\cf0  \cf12 new\cf0  \cf15 Error\cf0 (\cf9 "Invalid response structure from API."\cf0 );\cb1 \
+\cb3                     \}\cb1 \
+\cb3                 \} \cf12 catch\cf0  (error) \{\cb1 \
+\cb3                     console.error(\cf9 "Gemini API call failed:"\cf0 , error);\cb1 \
+\cb3                     alert(\cf9 "Sorry, there was an error contacting the AI assistant. Please try again later."\cf0 );\cb1 \
+\cb3                     \cf12 return\cf0  \cf12 null\cf0 ;\cb1 \
+\cb3                 \} \cf12 finally\cf0  \{\cb1 \
+\cb3                     button.disabled = \cf12 false\cf0 ;\cb1 \
+\cb3                     button.innerHTML = originalButtonContent;\cb1 \
+\cb3                 \}\cb1 \
+\cb3             \}\cb1 \
+\
+\cb3             \cf12 async\cf0  \cf12 function\cf0  handleSuggestSolvent(e) \{\cb1 \
+\cb3                 \cf12 const\cf0  button = e.currentTarget;\cb1 \
+\cb3                 \cf12 const\cf0  projectName = document.getElementById(\cf9 'projectName'\cf0 ).value;\cb1 \
+\cb3                 \cf12 if\cf0  (!projectName) \{\cb1 \
+\cb3                     alert(\cf9 "Please enter a Project Name or Analysis Type first."\cf0 );\cb1 \
+\cb3                     \cf12 return\cf0 ;\cb1 \
+\cb3                 \}\cb1 \
+\cb3                 \cf12 const\cf0  instrumentName = document.getElementById(\cf9 'bookingInstrument'\cf0 ).value;\cb1 \
+\cb3                 \cf12 const\cf0  prompt = \cf9 `For a mass spectrometry experiment on a \cf0 $\{instrumentName\}\cf9  involving "\cf0 $\{projectName\}\cf9 ", suggest a comma-separated list of 2-3 common mobile phase solvents or solvent systems. Be very concise. For example: Acetonitrile, Water with 0.1% Formic Acid.`\cf0 ;\cb1 \
+\cb3                 \cb1 \
+\cb3                 \cf12 const\cf0  suggestion = \cf12 await\cf0  callGeminiAPI(prompt, button);\cb1 \
+\cb3                 \cf12 if\cf0  (suggestion) \{\cb1 \
+\cb3                     document.getElementById(\cf9 'solvent'\cf0 ).value = suggestion.trim();\cb1 \
+\cb3                 \}\cb1 \
+\cb3             \}\cb1 \
+\
+\cb3             \cf12 async\cf0  \cf12 function\cf0  handleGeneratePlan(e) \{\cb1 \
+\cb3                 \cf12 const\cf0  button = e.currentTarget;\cb1 \
+\cb3                 \cf12 const\cf0  projectName = document.getElementById(\cf9 'projectName'\cf0 ).value;\cb1 \
+\cb3                 \cf12 const\cf0  solvent = document.getElementById(\cf9 'solvent'\cf0 ).value;\cb1 \
+\cb3                 \cf12 const\cf0  instrumentName = document.getElementById(\cf9 'bookingInstrument'\cf0 ).value;\cb1 \
+\cb3                 \cf12 const\cf0  start = startPicker.selectedDates[\cf14 0\cf0 ];\cb1 \
+\cb3                 \cf12 const\cf0  end = endPicker.selectedDates[\cf14 0\cf0 ];\cb1 \
+\
+\cb3                 \cf12 if\cf0  (!projectName || !solvent || !start || !end) \{\cb1 \
+\cb3                     alert(\cf9 "Please fill in Project Name, Solvent, and booking times before generating a plan."\cf0 );\cb1 \
+\cb3                     \cf12 return\cf0 ;\cb1 \
+\cb3                 \}\cb1 \
+\cb3                 \cb1 \
+\cb3                 \cf12 const\cf0  durationMinutes = \cf15 Math\cf0 .round((end - start) / \cf14 60000\cf0 );\cb1 \
+\
+\cb3                 \cf12 const\cf0  prompt = \cf9 `Create a concise, step-by-step experimental checklist for a mass spectrometry run.\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3                 - Instrument: \cf0 $\{instrumentName\}\cb1 \
+\cf9 \cb3                 - Analysis Type: \cf0 $\{projectName\}\cb1 \
+\cf9 \cb3                 - Solvents: \cf0 $\{solvent\}\cb1 \
+\cf9 \cb3                 - Total Time Allotted: \cf0 $\{durationMinutes\}\cf9  minutes\cf0 \cb1 \
+\cf9 \cb3                 The plan should be a numbered list of key actions to perform before, during, and after the run within the allotted time. Focus on practical steps.`\cf0 ;\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3                 \cf12 const\cf0  plan = \cf12 await\cf0  callGeminiAPI(prompt, button);\cb1 \
+\cb3                 \cf12 if\cf0  (plan) \{\cb1 \
+\cb3                     document.getElementById(\cf9 'experimentalPlan'\cf0 ).value = plan;\cb1 \
+\cb3                 \}\cb1 \
+\cb3             \}\cb1 \
+\
+\cb3             window.app = \{\cb1 \
+\cb3                 deleteUser: (userId) => \{\cb1 \
+\cb3                     \cf12 if\cf0  (userId === \cf14 1\cf0 ) \{ alert(\cf9 "Cannot delete the primary Lab Manager account."\cf0 ); \cf12 return\cf0 ; \}\cb1 \
+\cb3                     \cf12 if\cf0  (confirm(\cf9 'Are you sure you want to remove this user? This will also remove their bookings.'\cf0 )) \{\cb1 \
+\cb3                         state.users = state.users.filter(u => u.id !== userId);\cb1 \
+\cb3                         state.bookings = state.bookings.filter(b => b.userId !== userId);\cb1 \
+\cb3                         renderUsers();\cb1 \
+\cb3                         renderCalendar();\cb1 \
+\cb3                     \}\cb1 \
+\cb3                 \}\cb1 \
+\cb3             \};\cb1 \
+\
+\cb3             \cf13 // --- INITIALIZATION ---\cf0 \cb1 \
+\cb3             \cf12 function\cf0  init() \{\cb1 \
+\cb3                 renderInstruments();\cb1 \
+\cb3                 renderCalendar();\cb1 \
+\cb3                 renderUsers();\cb1 \
+\cb3             \}\cb1 \
+\
+\cb3             init();\cb1 \
+\cb3         \});\cb1 \
+\cb3     \cf6 </\cf7 script\cf6 >\cf0 \cb1 \
+\cf6 \cb3 </\cf7 body\cf6 >\cf0 \cb1 \
+\cf6 \cb3 </\cf7 html\cf6 >\cf0 \cb1 \
+\
+}
